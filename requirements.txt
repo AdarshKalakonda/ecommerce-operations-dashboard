@@ -1,0 +1,11 @@
+# requirements.txt
+# Olist E-Commerce Operations Dashboard
+# Python 3.10+ compatible — pinned to stable releases
+
+pandas==2.2.3
+numpy==2.2.2
+matplotlib==3.9.4
+seaborn==0.13.2
+colorama==0.4.6
+openpyxl==3.1.5
+scipy==1.14.1

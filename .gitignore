@@ -1,0 +1,29 @@
+# =============================================================================
+# .gitignore — Olist E-Commerce Operations Dashboard
+# =============================================================================
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Virtual environments ---
+venv/
+.venv/
+env/
+
+# --- Environment variables ---
+.env
+.env.*
+
+# --- Large raw Kaggle source files (too big for GitHub) ---
+olist_geolocation_dataset.csv
+
+# --- Excel lock files (created by Office when file is open) ---
+~$*.xlsx
+~$*.xls
+
+# --- OS noise ---
+.DS_Store
+Thumbs.db

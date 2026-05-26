@@ -1,0 +1,104 @@
+
+────────────────────────────────────────────────────────────
+  DATA QUALITY REPORT — tbl_analytics
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+  SECTION 1 — Dataset Shape
+────────────────────────────────────────────────────────────
+  Total rows   :     98,207
+  Total columns:         31
+
+────────────────────────────────────────────────────────────
+  SECTION 2 — Null % per Column (> 5% flagged)
+────────────────────────────────────────────────────────────
+  Delivery_Speed_Bucket                      1.77%  
+  Total_Delivery_Days                        1.77%  
+  Is_Late                                    1.77%  
+  Days_Early_Or_Late                         1.77%  
+  Satisfaction_Label                         0.75%  
+  review_score                               0.75%  
+  Days_In_Transit                            0.65%  
+  product_weight_g                           0.02%  
+  product_volume_cm3                         0.02%  
+  Days_To_Ship                               0.02%  
+  product_category_name_english              0.01%  
+  Total_Items                                0.01%  
+  Total_Freight                              0.01%  
+  Freight_Ratio                              0.01%  
+  Total_Revenue                              0.01%  
+  seller_id                                  0.01%  
+  seller_state                               0.01%  
+  seller_city                                0.01%  
+  Avg_Item_Price                             0.01%  
+  Purchase_Quarter                           0.00%  
+  Purchase_Month_Name                        0.00%  
+  Purchase_Week                              0.00%  
+  Purchase_Year                              0.00%  
+  Purchase_Month_Num                         0.00%  
+  order_id                                   0.00%  
+  order_status                               0.00%  
+  customer_state                             0.00%  
+  customer_city                              0.00%  
+  payment_type                               0.00%  
+  payment_installments                       0.00%  
+  payment_value                              0.00%  
+
+────────────────────────────────────────────────────────────
+  SECTION 3 — Value Counts for Categorical Columns
+────────────────────────────────────────────────────────────
+
+  order_status:
+    delivered                        96,478  ( 98.2%)
+    shipped                           1,107  (  1.1%)
+    invoiced                            314  (  0.3%)
+    processing                          301  (  0.3%)
+    created                               5  (  0.0%)
+    approved                              2  (  0.0%)
+
+  Delivery_Speed_Bucket:
+    Normal                           36,397  ( 37.1%)
+    Fast                             33,696  ( 34.3%)
+    Slow                             15,369  ( 15.6%)
+    Very Slow                        11,008  ( 11.2%)
+    nan                               1,737  (  1.8%)
+
+  Satisfaction_Label:
+    Positive                         75,899  ( 77.3%)
+    Negative                         13,524  ( 13.8%)
+    Neutral                           8,050  (  8.2%)
+    nan                                 734  (  0.7%)
+
+  payment_type:
+    credit_card                      74,116  ( 75.5%)
+    boleto                           19,539  ( 19.9%)
+    voucher                           3,037  (  3.1%)
+    debit_card                        1,514  (  1.5%)
+    nan                                   1  (  0.0%)
+
+────────────────────────────────────────────────────────────
+  SECTION 4 — Numeric Summaries
+────────────────────────────────────────────────────────────
+  Column                           Min        Max       Mean     Median
+  ─────────────────────────────────────────────────────────────────
+  Total_Revenue                   9.59   13664.08     160.24     105.28
+  Total_Delivery_Days             0.00     209.00      12.09      10.00
+  Days_To_Ship                    0.00      60.00       0.27       0.00
+  review_score                    1.00       5.00       4.12       5.00
+
+────────────────────────────────────────────────────────────
+  SECTION 5 — Outlier Detection
+────────────────────────────────────────────────────────────
+  Total_Revenue > 99th percentile (threshold = R$ 1,054.65): 982 orders  (1.00%)
+  Days_To_Ship > 30 days: 2 orders  (0.00%)
+  Negative Days_To_Ship (timestamp anomaly): 0 orders
+  Late orders (Is_Late = 1): 7,826  (7.97%)
+
+────────────────────────────────────────────────────────────
+  SECTION 6 — Duplicate order_id Check
+────────────────────────────────────────────────────────────
+  Duplicate order_id rows: 0
+
+────────────────────────────────────────────────────────────
+  Report saved
+────────────────────────────────────────────────────────────

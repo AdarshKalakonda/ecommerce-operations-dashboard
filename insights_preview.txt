@@ -1,0 +1,150 @@
+
+════════════════════════════════════════════════════════════
+  INSIGHT 1 — Top 5 States by Order Volume + Avg Review Score
+════════════════════════════════════════════════════════════
+customer_state  Order_Volume  Avg_Review
+            SP         41127        4.21
+            RJ         12698        3.90
+            MG         11496        4.16
+            RS          5417        4.15
+            PR          4983        4.21
+
+════════════════════════════════════════════════════════════
+  INSIGHT 2 — On-Time Delivery Rate Overall & Top 5 Categories
+════════════════════════════════════════════════════════════
+  Overall on-time delivery rate: 91.89%
+product_category_name_english  OnTime_Rate
+    fashion_childrens_clothes        100.0
+            cds_dvds_musicals        100.0
+                   la_cuisine        100.0
+                     pc_gamer        100.0
+        security_and_services        100.0
+
+════════════════════════════════════════════════════════════
+  INSIGHT 3 — Avg Days_To_Ship by Seller State (Fastest & Slowest)
+════════════════════════════════════════════════════════════
+  Top 10 Fastest States:
+seller_state  Avg_Days_To_Ship
+          AC              0.00
+          AM              0.00
+          PI              0.08
+          MS              0.21
+          RO              0.23
+          GO              0.24
+          RJ              0.24
+          CE              0.25
+          MT              0.25
+          PA              0.25
+  Top 10 Slowest States:
+seller_state  Avg_Days_To_Ship
+          PB              0.53
+          RN              0.33
+          BA              0.29
+          PE              0.29
+          SC              0.29
+          SE              0.29
+          ES              0.28
+          DF              0.27
+          SP              0.27
+          MA              0.26
+
+════════════════════════════════════════════════════════════
+  INSIGHT 4 — Revenue by Product Category (Top 10)
+════════════════════════════════════════════════════════════
+product_category_name_english  Total_Revenue
+                health_beauty     1436474.12
+                watches_gifts     1295814.76
+               bed_bath_table     1239000.38
+               sports_leisure     1148241.88
+        computers_accessories     1049176.56
+              furniture_decor      903571.43
+                   housewares      774323.13
+                   cool_stuff      705307.36
+                         auto      678508.66
+                 garden_tools      579622.49
+
+════════════════════════════════════════════════════════════
+  INSIGHT 5 — Cancellation Rate by Category
+════════════════════════════════════════════════════════════
+  Top 10 categories by Late Delivery Rate:
+    product_category_name_english  Late_Count  Total  Late_Rate_%
+                   home_comfort_2         4.0     22        18.18
+furniture_mattress_and_upholstery         5.0     37        13.51
+                            audio        45.0    344        13.08
+          fashion_underwear_beach        15.0    117        12.82
+                  books_technical        28.0    255        10.98
+                     home_confort        38.0    370        10.27
+                             food        44.0    435        10.11
+                      electronics       247.0   2507         9.85
+               christmas_supplies        12.0    125         9.60
+                             baby       258.0   2763         9.34
+
+════════════════════════════════════════════════════════════
+  INSIGHT 6 — Review Score vs Is_Late Correlation
+════════════════════════════════════════════════════════════
+  Pearson correlation (review_score ↔ Is_Late): -0.3649
+ Is_Late  Avg_Review_Score  Count Is_Late_Label
+     0.0          4.294058  88163       On-Time
+     1.0          2.565331   7661          Late
+
+════════════════════════════════════════════════════════════
+  INSIGHT 7 — Payment Type Breakdown + Avg Order Value
+════════════════════════════════════════════════════════════
+payment_type  Order_Count  Avg_Revenue
+ credit_card        74116       166.61
+      boleto        19539       144.69
+     voucher         3037       114.93
+  debit_card         1514       140.30
+
+════════════════════════════════════════════════════════════
+  INSIGHT 8 — Monthly Order Volume Trend (2016–2018)
+════════════════════════════════════════════════════════════
+ Period  Order_Count
+2016-09            2
+2016-10          293
+2016-12            1
+2017-01          787
+2017-02         1718
+2017-03         2617
+2017-04         2377
+2017-05         3640
+2017-06         3205
+2017-07         3946
+2017-08         4272
+2017-09         4227
+2017-10         4547
+2017-11         7423
+2017-12         5620
+2018-01         7187
+2018-02         6625
+2018-03         7168
+2018-04         6919
+2018-05         6833
+2018-06         6145
+2018-07         6233
+2018-08         6421
+2018-09            1
+
+════════════════════════════════════════════════════════════
+  INSIGHT 9 — Freight Ratio by Category (Top 10 Highest)
+════════════════════════════════════════════════════════════
+    product_category_name_english  Freight_Pct
+                   home_comfort_2        45.30
+                     dvds_blu_ray        40.27
+                      electronics        36.10
+                          flowers        34.84
+               christmas_supplies        33.64
+furniture_mattress_and_upholstery        30.48
+                        telephony        30.11
+                       food_drink        29.33
+              diapers_and_hygiene        26.27
+         costruction_tools_garden        26.19
+
+════════════════════════════════════════════════════════════
+  INSIGHT 10 — Delivery Speed Bucket Distribution
+════════════════════════════════════════════════════════════
+   Bucket  Count  Pct
+     Fast  33696 34.9
+   Normal  36397 37.7
+     Slow  15369 15.9
+Very Slow  11008 11.4
