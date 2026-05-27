@@ -1,193 +1,194 @@
-# E-Commerce Operations Dashboard
+<div align="center">
 
-> End-to-end Python ETL pipeline and Excel analytics dashboard built on 100K+ real Brazilian e-commerce transactions — surfacing delivery performance, revenue drivers, and customer satisfaction signals.
+# 🛒 Olist E-Commerce Operations Dashboard
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white)
-![pandas](https://img.shields.io/badge/pandas-2.2-150458?style=flat-square&logo=pandas&logoColor=white)
-![matplotlib](https://img.shields.io/badge/matplotlib-3.9-11557C?style=flat-square&logo=python&logoColor=white)
-![Excel](https://img.shields.io/badge/Excel-Dashboard-217346?style=flat-square&logo=microsoftexcel&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-2.2-013243?style=flat-square&logo=numpy&logoColor=white)
+### Turning 9 messy relational tables into a dashboard a business team can actually use on Monday morning.
 
----
+[![Python](https://img.shields.io/badge/Python-3.14-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![pandas](https://img.shields.io/badge/pandas-2.x-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org)
+[![Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)](https://microsoft.com/excel)
+[![matplotlib](https://img.shields.io/badge/matplotlib-3.x-11557c?style=for-the-badge)](https://matplotlib.org)
+[![GitHub](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)](.)
 
-## Overview
-
-E-commerce operations teams need fast, reliable answers to questions like: *Which product categories drive the most revenue? Where are deliveries failing? What does a late order cost in customer satisfaction?*
-
-This project builds a complete analytics stack — from raw CSV ingestion to a polished Excel dashboard — using the public Olist dataset. A modular ETL pipeline joins 9 relational source tables into a single analytics-ready fact table, a data quality audit validates every field, and a set of insight scripts generate 10 business-focused findings backed by charts.
-
-The result is a portfolio-grade project demonstrating the full data analyst workflow: data engineering, exploratory analysis, and stakeholder-ready reporting.
+</div>
 
 ---
 
-## Dataset
+## 📌 What This Is
 
-**Source:** [Olist Brazilian E-Commerce Dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) — Kaggle
-
-| Table | Rows | Description |
-|---|---|---|
-| `olist_orders_dataset.csv` | 99,441 | Order lifecycle with 5 timestamps |
-| `olist_order_items_dataset.csv` | 112,650 | Line items — price, freight, product, seller |
-| `olist_customers_dataset.csv` | 99,441 | Customer city and state |
-| `olist_sellers_dataset.csv` | 3,095 | Seller city and state |
-| `olist_products_dataset.csv` | 32,951 | Product dimensions, weight, category |
-| `olist_order_reviews_dataset.csv` | 99,224 | Review scores 1–5 with timestamps |
-| `olist_order_payments_dataset.csv` | 103,886 | Payment type, installments, value |
-| `product_category_name_translation.csv` | 71 | Portuguese → English category names |
-| `olist_geolocation_dataset.csv` | 1,000,163 | ZIP-level lat/lon *(excluded from repo — too large)* |
-
-**Coverage:** September 2016 – October 2018 · ~100K orders · 27 Brazilian states
+I took 9 messy relational tables from a real Brazilian marketplace, built a Python pipeline to clean and merge them, and turned **98,207 orders** into an interactive Excel dashboard that actually answers operational questions — delivery performance, revenue trends, customer satisfaction, and where the platform is quietly losing value.
 
 ---
 
-## Key Findings
+## 📊 Dashboard Preview
 
-| # | Finding |
-|---|---|
-| 1 | **98,207 orders** analyzed after removing canceled and unavailable records across 9 relational tables |
-| 2 | **91.89% overall on-time delivery rate** — marketplace logistics performance is strong but uneven by category |
-| 3 | **Late orders score 2.57 / 5 vs 4.29 / 5 for on-time orders** — Pearson r = −0.36, a statistically meaningful negative correlation |
-| 4 | **Health & Beauty is the top revenue category at R$1.44M**, followed by Watches & Gifts (R$1.30M) and Bed, Bath & Table (R$1.24M) |
-| 5 | **São Paulo state accounts for 41,127 orders — 42% of total marketplace volume**, more than the next four states combined |
-| 6 | **Order volume grew ~3,700× from September 2016 to November 2017**, peaking at 7,423 orders in a single month |
-| 7 | **Electronics carries the highest late-delivery risk at 9.85%** — nearly double the platform average |
-| 8 | **Credit card is the dominant payment method (75.5% of orders)** with the highest average basket value at R$166.61 |
+### Full Dashboard View
+![Dashboard Overview](dashboard_overview.png)
+
+### KPI Cards — Live Metrics from 98,207 Orders
+![KPI Cards](dashboard_kpis.png)
+
+### Interactive Slicers in Action
+![Dashboard Filtered](dashboard_filtered.png)
+
+> 📥 **[Download Olist_Ops_Dashboard.xlsx](Olist_Ops_Dashboard.xlsx)** to explore the live dashboard — click any slicer and watch every chart and KPI update in real time.
 
 ---
 
-## Project Structure
+## 🔢 The Numbers at a Glance
+
+| Metric | Value |
+|--------|-------|
+| 📦 Orders Analyzed | 98,207 |
+| 📁 Source Tables Merged | 9 relational CSVs |
+| 📐 Final Dataset | 98,207 rows × 31 columns |
+| ⏱ Date Range | Sep 2016 – Oct 2018 |
+| ✅ On-Time Delivery Rate | 91.89% |
+| ⭐ Avg Review Score | 4.12 / 5 |
+| 💰 Total Platform Revenue | R$ 15.7M |
+| 🏆 Top Revenue Category | Health & Beauty (R$ 1.44M) |
+
+---
+
+## 🔍 What I Found
+
+These aren't just numbers — they're the kind of findings that change operational decisions.
+
+**📍 São Paulo runs the marketplace, but has a satisfaction problem**
+SP accounts for 41,127 orders — 42% of the entire platform. But its average review score sits below MG and PR, which process a fraction of the volume. At that scale, even small logistics inefficiencies compound fast.
+
+**⚠️ Late deliveries don't just annoy customers — they crater ratings**
+Orders that arrived late averaged **2.57 / 5** in reviews. On-time orders averaged **4.29 / 5**. That's a 40% satisfaction gap driven entirely by whether the package showed up when promised. Pearson r = -0.36 across 96,000+ delivered orders.
+
+**🏆 Health & Beauty is quietly the most valuable category**
+It generated R$1.44M — 11% more than watches & gifts in second place, and nearly 2× bed & bath. Lower-than-average late delivery rate explains the strong review scores too.
+
+**🚨 Electronics is a risk category**
+9.85% late delivery rate — nearly **double** the platform average of 7.97%. Combined with the review score correlation, this category is bleeding customer trust at scale.
+
+**📈 The platform grew 3,700× in 14 months**
+From 2 orders in September 2016 to 7,423 in November 2017. Late delivery rates climbed during the steepest growth periods — a classic sign of logistics capacity not keeping up with demand.
+
+**💳 Credit card users are the highest-value customers**
+74% of orders use credit card, with an average basket of **R$166.61** vs R$144.69 for boleto. If you're growing revenue per order, the credit card segment is where to focus.
+
+---
+
+## 🏗️ Architecture
 
 ```
-E-Commerce Operations Dashboard/
-│
-├── etl_pipeline.py               # Loads, cleans, and joins all 9 source CSVs
-├── data_quality_report.py        # Null audit, outlier detection, value distributions
-├── insights_preview.py           # 10 business insights + 10 PNG charts
-├── build_date_table.py           # Generates tbl_dates.csv date dimension
-│
-├── tbl_analytics.csv             # Master analytics table (98,207 rows × 31 cols)
-├── tbl_dates.csv                 # Date dimension: 2016-09-01 to 2018-10-31
-│
-├── data_quality_summary.txt      # Full data quality report output
-├── insights_preview.txt          # All 10 insights as plain text
-│
-├── charts/
-│   ├── 01_top_states_by_volume.png
-│   ├── 02_ontime_delivery_by_category.png
-│   ├── 03_days_to_ship_by_state.png
-│   ├── 04_revenue_by_category.png
-│   ├── 05_late_delivery_by_category.png
-│   ├── 06_review_vs_late.png
-│   ├── 07_payment_type_breakdown.png
-│   ├── 08_monthly_order_trend.png
-│   ├── 09_freight_ratio_by_category.png
-│   └── 10_speed_bucket_distribution.png
-│
-├── Olist_Ops_Dashboard.xlsx      # Interactive Excel dashboard
-├── requirements.txt
-├── .gitignore
-└── README.md
+Raw Data (9 CSVs)
+      │
+      ▼
+┌─────────────────────┐
+│   etl_pipeline.py   │  ← Cleans, transforms, merges all 9 tables
+│   Python + pandas   │    Calculates 12 operational KPI columns
+└─────────────────────┘
+      │
+      ▼
+  tbl_analytics.csv       ← 98,207 rows × 31 columns
+  tbl_dates.csv           ← 791-row date dimension table
+      │
+      ▼
+┌──────────────────────────────┐
+│  Olist_Ops_Dashboard.xlsx    │  ← Interactive Excel Dashboard
+│  • 6 Live KPI Cards          │     Power Query + PivotTables
+│  • Revenue Trend Chart       │     XLOOKUP + Slicers
+│  • Orders by State Chart     │     Conditional Formatting
+│  • 4 Interactive Slicers     │
+└──────────────────────────────┘
 ```
 
 ---
 
-## How to Run
+## 📁 Project Structure
 
-**1. Clone the repository**
+```
+ecommerce-operations-dashboard/
+│
+├── 📜 etl_pipeline.py           # Full ETL — loads & merges 9 CSVs → tbl_analytics.csv
+├── 📜 data_quality_report.py    # Null audit, outlier detection, value counts
+├── 📜 insights_preview.py       # 10 business insight charts → /charts
+├── 📜 build_date_table.py       # Date dimension table → tbl_dates.csv
+│
+├── 📋 requirements.txt          # Python dependencies (pinned versions)
+├── 📊 tbl_analytics.csv         # Final merged analytics table
+├── 📅 tbl_dates.csv             # Date dimension table
+│
+├── 📗 Olist_Ops_Dashboard.xlsx  # Interactive Excel dashboard
+│
+├── 🖼️ dashboard_overview.png    # Full dashboard screenshot
+├── 🖼️ dashboard_kpis.png        # KPI cards screenshot
+├── 🖼️ dashboard_filtered.png    # Slicers in action screenshot
+│
+├── 📁 charts/                   # 10 dark-theme insight charts (PNG)
+├── 📄 insights_preview.txt      # Written findings from analysis
+└── 📄 data_quality_summary.txt  # Data quality report output
+```
+
+---
+
+## ⚙️ How to Run
+
+**1. Clone the repo**
 ```bash
 git clone https://github.com/AdarshKalakonda/ecommerce-operations-dashboard.git
 cd ecommerce-operations-dashboard
 ```
 
-**2. Download the raw data**
+**2. Download the dataset**
 
-Download the Olist dataset from [Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) and place all CSV files in the project root.
+Go to [kaggle.com/datasets/olistbr/brazilian-ecommerce](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) and place all 9 CSV files in the project folder.
 
-**3. Create and activate a virtual environment**
+**3. Set up the environment**
 ```bash
-# Windows
 python -m venv venv
-venv\Scripts\activate
+venv\Scripts\activate          # Windows
+source venv/bin/activate       # Mac/Linux
 
-# macOS / Linux
-python -m venv venv
-source venv/bin/activate
-```
-
-**4. Install dependencies**
-```bash
 pip install -r requirements.txt
 ```
 
-**5. Run the pipeline in order**
+**4. Run the pipeline — in this order**
 ```bash
-# Step 1 — Build the analytics table (required first)
-python etl_pipeline.py
-
-# Step 2 — Validate data quality
-python data_quality_report.py
-
-# Step 3 — Generate insights and charts
-python insights_preview.py
-
-# Step 4 — Build the date dimension table
-python build_date_table.py
+python etl_pipeline.py          # ~60 sec — creates tbl_analytics.csv
+python data_quality_report.py   # Creates data_quality_summary.txt
+python insights_preview.py      # Creates 10 charts in /charts/
 ```
 
-Each script prints a progress log to the terminal. Total runtime is approximately 15–30 seconds depending on hardware.
+**5. Open the dashboard**
+
+Open `Olist_Ops_Dashboard.xlsx` in Excel → Data tab → **Refresh All**.
 
 ---
 
-## Dashboard Preview
+## 🛠️ Tech Stack
 
-`Olist_Ops_Dashboard.xlsx` is an interactive Excel workbook connected to `tbl_analytics.csv` and `tbl_dates.csv`. It includes:
-
-- **KPI Summary** — headline metrics (order volume, on-time rate, avg review score, total revenue)
-- **Delivery Performance** — late rate by category, speed bucket distribution, state-level heatmap
-- **Revenue Analysis** — category revenue ranking, payment type breakdown, avg basket by state
-- **Customer Satisfaction** — review score distribution, on-time vs late score comparison
-- **Trend View** — monthly order volume from 2016 to 2018
-
-All pivot tables use `tbl_dates.csv` as a time spine for consistent Year / Quarter / Month filtering.
+| Layer | Tools |
+|-------|-------|
+| Data Processing | Python 3.14, pandas, numpy |
+| Visualization | matplotlib, seaborn |
+| Dashboard | Microsoft Excel 2021 |
+| Excel Features | Power Query, PivotTables, XLOOKUP, Slicers, Conditional Formatting |
+| Version Control | Git, GitHub |
 
 ---
 
-## ETL Pipeline — Merge Summary
+## 📚 Dataset
 
-The pipeline performs a series of left joins anchored on `order_id`, preserving all orders throughout:
-
-| Stage | Rows |
-|---|---|
-| Orders (raw) | 99,441 |
-| After removing canceled / unavailable | 98,207 |
-| After join → order items | 98,207 |
-| After join → customers | 98,207 |
-| After join → reviews | 98,207 |
-| After join → products | 98,207 |
-| After join → sellers | 98,207 |
-| After join → payments | 98,207 |
-| **tbl_analytics (final)** | **98,207 × 31 columns** |
-
-Zero row loss after filtering — all joins are left joins to prevent silently dropping unmatched orders.
+[Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
+Released under CC BY-NC-SA 4.0 · Real anonymized transaction data from 2016–2018
 
 ---
 
-## Tech Stack
+## 👤 About
 
-| Tool | Role |
-|---|---|
-| Python 3.10+ | ETL scripting, data transformation |
-| pandas | DataFrame operations, merges, aggregations |
-| NumPy | Vectorized calculations, derived metrics |
-| matplotlib | Chart generation (dark-theme PNGs) |
-| seaborn | Statistical visualization support |
-| colorama | Terminal color output in quality report |
-| openpyxl | Excel read/write for dashboard integration |
-| scipy | Pearson correlation (review score vs lateness) |
-| Excel (Power Query) | Interactive dashboard layer |
+Built by **Adarsh Kalakonda** — this project was designed to demonstrate end-to-end data work, from wrangling raw relational tables to building a dashboard that surfaces real business insights. Every number in this README came from the actual data.
 
 ---
 
-## Author
+<div align="center">
 
-Built by [Adarsh Kalakonda](mailto:kalakondaadarsh1@gmail.com) as a portfolio project demonstrating end-to-end data analytics engineering on a real-world e-commerce dataset.
+⭐ If this project helped you, consider giving it a star!
+
+</div>
